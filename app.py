@@ -741,15 +741,24 @@ def create_app():
 demo = create_app()
 
 if __name__ == "__main__":
-    # Render and cloud environments set the PORT environment variable (default: 7860)
-    port = int(os.getenv("PORT", 7860))
-    # Render requires binding to 0.0.0.0 for external ingress routing
+    # In cloud environments (Render, Hugging Face, Docker), PORT is provided via environment
+    port_env = os.getenv("PORT")
+    port = int(port_env) if port_env else None
+    # Bind to 0.0.0.0 for external ingress routing
     server_name = os.getenv("GRADIO_SERVER_NAME", "0.0.0.0")
-    print(f"Starting Indian Stock Advisor on http://{server_name}:{port} ...", flush=True)
+    print(f"Starting Indian Stock Advisor on {server_name}:{port or 'dynamic'} ...", flush=True)
     demo.queue()
-    demo.launch(
-        server_name=server_name,
-        server_port=port,
-        css=custom_css,
-        show_error=True
-    )
+    try:
+        demo.launch(
+            server_name=server_name,
+            server_port=port,
+            css=custom_css,
+            show_error=True
+        )
+    except OSError:
+        # Graceful fallback if specified local port is temporarily in TIME_WAIT
+        demo.launch(
+            server_name=server_name,
+            css=custom_css,
+            show_error=True
+        )
