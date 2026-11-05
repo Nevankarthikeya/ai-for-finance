@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Environment Variables & Secrets (CRITICAL)
+.env
+.env.*
+!.env.example
+
+# Local SQLite databases
+*.sqlite
+*.sqlite3
+*.db
+
+# Dynamic exports
+indian_stock_daily_prices.csv
+indian_stock_scan_results.csv
+indian_stock_download_failures.csv
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
