@@ -741,12 +741,10 @@ def create_app():
 demo = create_app()
 
 if __name__ == "__main__":
-    print("Starting Indian Stock Advisor on http://127.0.0.1:7860 ...", flush=True)
+    print("Starting Indian Stock Advisor...", flush=True)
     demo.queue()
     demo.launch(
         server_name="127.0.0.1",
-        server_port=7860,
         css=custom_css,
-        show_error=True,
-        inbrowser=True
+        show_error=True
     )
