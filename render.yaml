@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: indian-stock-advisor
+    runtime: python
+    plan: free
+    region: oregon
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: GRADIO_SERVER_NAME
+        value: 0.0.0.0
+      - key: FINNHUB_API_KEY
+        sync: false
+      - key: TWELVE_DATA_API_KEY
+        sync: false
+      - key: TAVILY_API_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: DEFAULT_START_DATE
+        value: 2015-01-01
+      - key: DEFAULT_MAX_STOCKS
+        value: 50
+      - key: DEFAULT_PAUSE_SECONDS
+        value: 0.4

@@ -741,10 +741,15 @@ def create_app():
 demo = create_app()
 
 if __name__ == "__main__":
-    print("Starting Indian Stock Advisor...", flush=True)
+    # Render and cloud environments set the PORT environment variable (default: 7860)
+    port = int(os.getenv("PORT", 7860))
+    # Render requires binding to 0.0.0.0 for external ingress routing
+    server_name = os.getenv("GRADIO_SERVER_NAME", "0.0.0.0")
+    print(f"Starting Indian Stock Advisor on http://{server_name}:{port} ...", flush=True)
     demo.queue()
     demo.launch(
-        server_name="127.0.0.1",
+        server_name=server_name,
+        server_port=port,
         css=custom_css,
         show_error=True
     )

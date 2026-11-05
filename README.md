@@ -182,6 +182,41 @@ Open your browser at: `http://localhost:7860`
 
 ---
 
+## 🚀 Deployment to Render (render.com)
+
+The project includes ready-to-deploy configuration for [Render](https://render.com).
+
+### Option A: 1-Click Blueprint (Recommended)
+1. Push your repository to GitHub.
+2. Log in to [Render Dashboard](https://dashboard.render.com/).
+3. Click **New +** and select **Blueprint**.
+4. Connect your `ai-for-finance` GitHub repository.
+5. Render reads `render.yaml` automatically.
+6. Under environment variables, provide your API keys (`FINNHUB_API_KEY`, `TWELVE_DATA_API_KEY`, `TAVILY_API_KEY`, `GEMINI_API_KEY`).
+7. Click **Apply**. Render will build and deploy the web service.
+
+### Option B: Manual Web Service Setup
+1. In Render Dashboard, click **New +** -> **Web Service**.
+2. Connect your GitHub repository: `https://github.com/shaikmohammadshahid2006-boop/ai-for-finance`.
+3. Configure the following parameters:
+   - **Name**: `indian-stock-advisor`
+   - **Language / Runtime**: `Python`
+   - **Branch**: `main`
+   - **Region**: Any (e.g. `Oregon (US West)` or `Frankfurt (EU)`)
+   - **Build Command**: `pip install -r requirements.txt`
+   - **Start Command**: `python app.py`
+   - **Plan**: `Free`
+4. In the **Environment Variables** section, add:
+   - `PYTHON_VERSION`: `3.11.9`
+   - `GRADIO_SERVER_NAME`: `0.0.0.0`
+   - `FINNHUB_API_KEY`: `your_finnhub_api_key`
+   - `TWELVE_DATA_API_KEY`: `your_twelve_data_api_key`
+   - `TAVILY_API_KEY`: `your_tavily_api_key`
+   - `GEMINI_API_KEY`: `your_gemini_api_key`
+5. Click **Deploy Web Service**. Render assigns a public URL (e.g. `https://indian-stock-advisor.onrender.com`).
+
+---
+
 ## 🤗 Deployment to Hugging Face Spaces
 
 This repository is pre-configured for direct deployment on **Hugging Face Spaces**.
