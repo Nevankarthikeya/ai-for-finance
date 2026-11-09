@@ -351,7 +351,7 @@ def test_api_credentials(f_key: str, t_key: str, tav_key: str, g_key: str):
 
 def create_app():
     # Build Gradio UI
-    with gr.Blocks(title="Antigravity Indian Stock Advisor", analytics_enabled=False) as demo:
+    with gr.Blocks(title="Antigravity Indian Stock Advisor", analytics_enabled=False, css=custom_css) as demo:
 
         # Header Banne
         gr.HTML(
@@ -371,7 +371,7 @@ def create_app():
             # ---------------- TAB 1: SCREENER & SCANNER ----------------
             with gr.Tab("📊 Stock Screener & Quantitative Scanner", id="tab_screener"):
                 with gr.Row():
-                    with gr.Column(scale=3):
+                    with gr.Column(scale=3, elem_id="universe-source-col"):
                         source_choice = gr.Radio(
                             choices=[
                                 "Main Board Equities (EQUITY_L.csv)",
@@ -382,18 +382,21 @@ def create_app():
                             ],
                             value="Main Board Equities (EQUITY_L.csv)",
                             label="Security Universe Source",
-                            info="Select official eligible documents or provide your own stocks"
+                            info="Select an eligible securities universe or import your own stock symbols.",
+                            elem_id="security-universe-source"
                         )
                         custom_file = gr.File(
                             label="Upload Custom Security CSV or Excel File",
                             file_types=[".csv", ".xlsx", ".xls"],
-                            visible=False
+                            visible=False,
+                            elem_id="universe-custom-file"
                         )
                         custom_symbols_text = gr.Textbox(
                             label="Enter Symbols (Comma or Space Separated)",
                             placeholder="e.g. RELIANCE, TCS, INFY, HDFCBANK, TATAMOTORS",
                             lines=2,
-                            visible=False
+                            visible=False,
+                            elem_id="universe-custom-symbols"
                         )
 
                     with gr.Column(scale=2):

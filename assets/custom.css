@@ -113,3 +113,353 @@
   box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35) !important;
 }
 
+/* ==========================================================================
+   TARGETED REDESIGN: SECURITY UNIVERSE SOURCE (DEEP SLATE THEME)
+   ========================================================================== */
+
+/* Outer Panel Container */
+#universe-source-col {
+  background-color: #0B0E14 !important; /* Deep Slate */
+  border: 1px solid #293141 !important;
+  border-radius: 12px !important;
+  padding: 18px 20px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-sizing: border-box !important;
+}
+
+/* Reset inner Radio block container to remove duplicate borders/margins */
+#security-universe-source {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+}
+
+#security-universe-source fieldset {
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Single clean heading and subtitle */
+#security-universe-source .block-label,
+#security-universe-source > span:first-child,
+#security-universe-source legend {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #F1F5F9 !important;
+  letter-spacing: -0.2px !important;
+  margin: 0 0 4px 0 !important;
+  padding: 0 !important;
+  position: static !important;
+  display: block !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#security-universe-source .block-info,
+#security-universe-source .block-label + span,
+#security-universe-source .info {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: #A1AAB8 !important;
+  margin: 0 0 16px 0 !important;
+  padding: 0 !important;
+  display: block !important;
+  line-height: 1.5 !important;
+}
+
+/* Grid Layout for Selection Cards */
+#security-universe-source .wrap {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Desktop: First row 3 cards */
+#security-universe-source .wrap > label:nth-child(1),
+#security-universe-source .wrap > label:nth-child(2),
+#security-universe-source .wrap > label:nth-child(3) {
+  flex: 1 1 calc(33.333% - 12px) !important;
+  max-width: calc(33.333% - 8px) !important;
+  min-width: 170px !important;
+  box-sizing: border-box !important;
+}
+
+/* Desktop: Second row 2 cards, centered */
+#security-universe-source .wrap > label:nth-child(4),
+#security-universe-source .wrap > label:nth-child(5) {
+  flex: 0 1 calc(33.333% - 12px) !important;
+  width: calc(33.333% - 8px) !important;
+  min-width: 170px !important;
+  box-sizing: border-box !important;
+}
+
+/* Base Card Style (Default State) */
+#security-universe-source .wrap > label {
+  background-color: #171B26 !important; /* Dark Charcoal */
+  border: 1px solid #293141 !important;
+  border-radius: 12px !important;
+  padding: 16px 18px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  position: relative !important;
+  min-height: 126px !important;
+  box-sizing: border-box !important;
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Hover State */
+#security-universe-source .wrap > label:hover {
+  background-color: #1D2431 !important; /* Hover surface */
+  border-color: #3D495E !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* Selected State */
+#security-universe-source .wrap > label:has(input:checked),
+#security-universe-source .wrap > label.selected {
+  background-color: #182633 !important; /* Selected surface */
+  border-color: #4CC9F0 !important; /* Crystal Blue */
+  box-shadow: 0 0 0 1px #4CC9F0, 0 6px 20px rgba(76, 201, 240, 0.12) !important;
+}
+
+/* Line Icons on Cards */
+#security-universe-source .wrap > label::before {
+  content: "" !important;
+  display: flex !important;
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 8px !important;
+  background-color: rgba(76, 201, 240, 0.08) !important;
+  border: 1px solid rgba(76, 201, 240, 0.18) !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 18px 18px !important;
+  margin-bottom: 10px !important;
+  transition: all 0.2s ease !important;
+  flex-shrink: 0 !important;
+}
+
+#security-universe-source .wrap > label:hover::before {
+  background-color: rgba(76, 201, 240, 0.14) !important;
+  border-color: rgba(76, 201, 240, 0.35) !important;
+}
+
+#security-universe-source .wrap > label:has(input:checked)::before,
+#security-universe-source .wrap > label.selected::before {
+  background-color: rgba(76, 201, 240, 0.22) !important;
+  border-color: #4CC9F0 !important;
+  box-shadow: 0 0 12px rgba(76, 201, 240, 0.3) !important;
+}
+
+/* 1. Main Board Equities (Official NSE mainboard) - Exchange Pillars Icon */
+#security-universe-source .wrap > label:nth-child(1)::before,
+#security-universe-source .wrap > label:has(input[value*="EQUITY_L.csv"]):not(:has(input[value*="SME"]))::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234CC9F0' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='3' y1='21' x2='21' y2='21'/%3E%3Cline x1='4' y1='10' x2='20' y2='10'/%3E%3Cpolygon points='12 3 2 10 22 10 12 3'/%3E%3Cline x1='6' y1='10' x2='6' y2='21'/%3E%3Cline x1='10' y1='10' x2='10' y2='21'/%3E%3Cline x1='14' y1='10' x2='14' y2='21'/%3E%3Cline x1='18' y1='10' x2='18' y2='21'/%3E%3C/svg%3E") !important;
+}
+
+/* 2. SME Equities - Growth Trend / Emerging Icon */
+#security-universe-source .wrap > label:nth-child(2)::before,
+#security-universe-source .wrap > label:has(input[value*="SME"])::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234CC9F0' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='20' x2='18' y2='10'/%3E%3Cline x1='12' y1='20' x2='12' y2='4'/%3E%3Cline x1='6' y1='20' x2='6' y2='14'/%3E%3Cpath d='M3 20h18'/%3E%3Cpolyline points='14 7 18 3 22 7'/%3E%3C/svg%3E") !important;
+}
+
+/* 3. T+0 Settlement Eligible - Instant Settlement Zap Icon */
+#security-universe-source .wrap > label:nth-child(3)::before,
+#security-universe-source .wrap > label:has(input[value*="T+0"])::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234CC9F0' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/%3E%3C/svg%3E") !important;
+}
+
+/* 4. Custom File Upload - Document Upload Icon */
+#security-universe-source .wrap > label:nth-child(4)::before,
+#security-universe-source .wrap > label:has(input[value*="Custom File"])::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234CC9F0' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3Cline x1='12' y1='18' x2='12' y2='12'/%3E%3Cline x1='9' y1='15' x2='12' y2='12'/%3E%3Cline x1='15' y1='15' x2='12' y2='12'/%3E%3C/svg%3E") !important;
+}
+
+/* 5. Manual Symbol Input - Custom Edit / Pen Icon */
+#security-universe-source .wrap > label:nth-child(5)::before,
+#security-universe-source .wrap > label:has(input[value*="Manual Symbol"])::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234CC9F0' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z'/%3E%3C/svg%3E") !important;
+}
+
+/* Card Title */
+#security-universe-source .wrap > label span {
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  color: #F1F5F9 !important; /* Primary text */
+  line-height: 1.35 !important;
+  margin: 0 !important;
+  padding-right: 24px !important; /* prevent overlap with selection indicator */
+  display: block !important;
+  text-align: left !important;
+  word-break: break-word !important;
+}
+
+/* Card Subtitle / Description */
+#security-universe-source .wrap > label::after {
+  display: block !important;
+  font-size: 11.5px !important;
+  font-weight: 400 !important;
+  color: #A1AAB8 !important; /* Secondary text */
+  line-height: 1.4 !important;
+  margin-top: 5px !important;
+  text-align: left !important;
+}
+
+#security-universe-source .wrap > label:nth-child(1)::after,
+#security-universe-source .wrap > label:has(input[value*="EQUITY_L.csv"]):not(:has(input[value*="SME"]))::after {
+  content: "Official NSE mainboard stock universe." !important;
+}
+
+#security-universe-source .wrap > label:nth-child(2)::after,
+#security-universe-source .wrap > label:has(input[value*="SME"])::after {
+  content: "NSE SME-listed securities." !important;
+}
+
+#security-universe-source .wrap > label:nth-child(3)::after,
+#security-universe-source .wrap > label:has(input[value*="T+0"])::after {
+  content: "Securities eligible for T+0 settlement." !important;
+}
+
+#security-universe-source .wrap > label:nth-child(4)::after,
+#security-universe-source .wrap > label:has(input[value*="Custom File"])::after {
+  content: "Import your own securities CSV file." !important;
+}
+
+#security-universe-source .wrap > label:nth-child(5)::after,
+#security-universe-source .wrap > label:has(input[value*="Manual Symbol"])::after {
+  content: "Enter your preferred stock symbols manually." !important;
+}
+
+/* Visual Selection Indicator (Radio Ring / Check) */
+#security-universe-source .wrap > label input[type="radio"] {
+  position: absolute !important;
+  top: 16px !important;
+  right: 16px !important;
+  width: 18px !important;
+  height: 18px !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+  border-radius: 50% !important;
+  border: 1.8px solid #293141 !important; /* Border */
+  background-color: transparent !important;
+  cursor: pointer !important;
+  outline: none !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  z-index: 2 !important;
+}
+
+#security-universe-source .wrap > label:hover input[type="radio"] {
+  border-color: #4CC9F0 !important;
+}
+
+#security-universe-source .wrap > label input[type="radio"]:checked {
+  border-color: #4CC9F0 !important;
+  background-color: #4CC9F0 !important; /* Crystal Blue */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%230B0E14' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: 11px 11px !important;
+  box-shadow: 0 0 10px rgba(76, 201, 240, 0.45) !important;
+}
+
+/* Upload & Manual Controls When Active */
+#universe-custom-file,
+#universe-custom-symbols {
+  background-color: #171B26 !important;
+  border: 1px solid #293141 !important;
+  border-radius: 10px !important;
+  padding: 14px 16px !important;
+  margin-top: 8px !important;
+  transition: border-color 0.2s ease !important;
+}
+
+#universe-custom-file:hover,
+#universe-custom-symbols:hover,
+#universe-custom-symbols:focus-within {
+  border-color: #4CC9F0 !important;
+}
+
+#universe-custom-file .block-label,
+#universe-custom-symbols .block-label {
+  color: #F1F5F9 !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  margin-bottom: 6px !important;
+}
+
+#universe-custom-symbols textarea {
+  background-color: #0B0E14 !important;
+  border: 1px solid #293141 !important;
+  color: #F1F5F9 !important;
+  border-radius: 8px !important;
+  padding: 10px 12px !important;
+  font-size: 13px !important;
+}
+
+#universe-custom-symbols textarea:focus {
+  border-color: #4CC9F0 !important;
+  box-shadow: 0 0 0 1px #4CC9F0 !important;
+  outline: none !important;
+}
+
+#universe-custom-symbols textarea::placeholder {
+  color: #737D8D !important;
+}
+
+#universe-custom-file .upload-container,
+#universe-custom-file button {
+  background-color: #1D2431 !important;
+  border: 1px dashed #293141 !important;
+  color: #A1AAB8 !important;
+  border-radius: 8px !important;
+}
+
+#universe-custom-file .upload-container:hover {
+  border-color: #4CC9F0 !important;
+  color: #F1F5F9 !important;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 992px) {
+  #security-universe-source .wrap > label:nth-child(1),
+  #security-universe-source .wrap > label:nth-child(2),
+  #security-universe-source .wrap > label:nth-child(3),
+  #security-universe-source .wrap > label:nth-child(4) {
+    flex: 1 1 calc(50% - 12px) !important;
+    max-width: calc(50% - 6px) !important;
+  }
+  #security-universe-source .wrap > label:nth-child(5) {
+    flex: 0 1 calc(50% - 12px) !important;
+    width: calc(50% - 6px) !important;
+  }
+}
+
+@media (max-width: 576px) {
+  #security-universe-source .wrap > label {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    min-height: auto !important;
+    padding: 14px 16px !important;
+  }
+}
+
+
